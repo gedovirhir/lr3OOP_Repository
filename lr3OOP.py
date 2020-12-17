@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 from random import randint, choice
+import time
 
 class __storageList__(ABC): #снаружи наше "хранилище" ведет себя как список
     @abstractmethod
@@ -144,6 +145,8 @@ class Antilope(listZoo):
     def __init__(self, weight):
         self.setDefaultCharacteristic("Antilope", weight)
 
+start_time = time.time()
+
 MyStor = listZoo()
 avaliableCharct = {"Height": randint(50, 170), "Age" : randint(0, 15), "Sex" : choice(["Male", "Female"]), "Name" : choice(["Richard","Rasmus", "Tony", "Aubrey", "Don Juan", "Graham","George" ]) }
 
@@ -171,5 +174,6 @@ for i in range(n):
         if not MyStor.isEmpty():
             someObject = MyStor.getNode(randint(0,MyStor.len-1))
             print(someObject.key.getInfo())
+    
 
-        
+print("Время выполнения программы: " + str(time.time() - start_time))
