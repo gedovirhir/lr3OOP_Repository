@@ -16,8 +16,6 @@ class __storageList__(ABC): #снаружи наше "хранилище" вед
         pass
     def deleteIndex(self, index): #удаление элемента по индексу
         pass
-    def show(self): #вывод элементов 
-        pass
     def clear(self): #очистка списка
         pass 
 
